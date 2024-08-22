@@ -1,15 +1,15 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'repo1/gcp-devops-433010/runimage', '.']
+  args: ['build', '-t', 'asia.gcr.io/gcp-devops-433010/image1', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'repo1/gcp-devops-433010/runimage']
+  args: ['push', 'asia.gcr.io/gcp-devops-433010/image1']
 # Deploy container image to Cloud Run
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
 #  entrypoint: gcloud
 # args: ['run', 'deploy', 'runwithcicd', '--image', 'gcr.io/gcp-devops-433010/runimage', '--region', 'us-central1', '--allow-unauthenticated']
 images:
-- repo1/gcp-devops-433010/runimage
+- asia.gcr.io/gcp-devops-433010/image1
 options:
   logging : CLOUD_LOGGING_ONLY
